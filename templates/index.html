@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  <title>Your page title here :)</title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  {% assets "css_all" %}
+    <link rel="stylesheet" href="{{ ASSET_URL }}">
+  {% endassets %}
+
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/png" href="images/favicon.png">
+
+</head>
+<body>
+  <div id="background"></div>
+
+  <!-- Primary Page Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <div class="container hundred_percent">
+    <div class="player-top u-full-width u-pull-left">
+      <span>Music player</span>
+    </div>
+    
+    <div class="player-middle u-full-width u-pull-left">
+      <div class="player-album-title">
+        <p>Nujabes - Spiritual State - Spiritual State</p>
+        <p>1:30 / 2:50</p>
+      </div>
+      <img id="album-cover" src="img/covers/24.jpg"></img>
+      <div class="player-controls">
+        <img src="img/step-backward.png"></img>
+        <img src="img/play.png"></img>
+        <img src="img/step-forward.png"></img>
+      </div>
+    </div>
+
+    <div class="player-bottom u-full-width u-pull-left">
+      <div class="albums">
+        {% for i in objs.albums[:20] %}
+            <img src="img/covers/{{ i }}"/>
+        {% endfor %}
+      </div>
+    </div>
+  </div> <!--div class="container hundred_percent" -->
+  <!-- JS -->
+  {% assets "js_all" %}
+    <script type="text/javascript" src="{{ ASSET_URL }}"></script>
+  {% endassets %}
+
+<!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+</body>
+</html>
